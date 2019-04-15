@@ -1,0 +1,43 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<div class="container">
+<div class="row">
+                 <article class="tease  ">
+            <figure class="tease__figure">
+               <a href="midcentury-modern-moscow-mule-martini-cocktail-recipe/" class="tease__image-link">
+               <img src="https://images.pexels.com/photos/270186/pexels-photo-270186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="tease__image" scale="0">
+               </a>
+            </figure>
+            <div class="tease__text-card-wrapper">
+               <div class="tease__text-card">
+                  <div class="tease__post-type">
+                     <a href="/article/cocktails/">
+                     Culture
+                     </a>
+                  </div>
+                  <h3 class="tease__title"><a href="midcentury-modern-moscow-mule-martini-cocktail-recipe/">{{ page.header.title }}</a></h3>
+                  <p class="tease__dek">
+                     {{ page.header.description }}
+                  </p>
+                  <div class="share-links">
+                     <i style="font-size: 0.8em !important;" class="center fab fa-facebook-f grey-text darken-4"></i>
+                     <i style="font-size: 0.8em !important;" class="center fab fa-twitter grey-text darken-4"></i>
+                     <i style="font-size: 0.8em !important;" class="center fab fa-pinterest grey-text darken-4"></i>
+                     <i class="fa fa-envelope grey-text darken-4"></i>
+                  </div>
+                  <ul class="tease__credits">
+                     <li class="tease__credit">
+                        story: <span class="tease__credit--name">
+                        <a href="/author/punch-staff/">
+                        {{ page.header.author }}
+                        </a>
+                        </span>
+                     </li>
+                     <li class="tease__credit">tags: <span class="tease__credit--name"><a href="http://www.lizziemunro.com/">{{ page.header.tags }}</a></span></li>
+                  </ul>
+               </div>
+            </div>
+         </article>
+ </div>
+</div>
+{% endblock %}
