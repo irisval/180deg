@@ -1,0 +1,15 @@
+# Grav Specific
+.sass-cache/*
+cache/*
+!cache/.gitkeep
+assets/*
+!assets/.gitkeep
+logs/*
+!logs/.gitkeep
+user/data/*
+!user/data/.gitkeep
+user/accounts/*
+!user/accounts/.gitkeep
+user/config/*
+!user/config/.gitkeep
+user/themes/lc/css/.sass-cache/*

@@ -2,10 +2,11 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/form/blueprints.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452582,
     'data' => [
         'name' => 'Form',
-        'version' => '2.16.4',
+        'version' => '3.0.3',
+        'testing' => false,
         'description' => 'Enables the forms handling',
         'icon' => 'check-square',
         'author' => [
@@ -20,7 +21,7 @@ return [
         'dependencies' => [
             0 => [
                 'name' => 'grav',
-                'version' => '>=1.5.1'
+                'version' => '>=1.6.0'
             ]
         ],
         'form' => [
@@ -49,8 +50,8 @@ return [
                             'highlight' => 1,
                             'default' => 1,
                             'options' => [
-                                1 => 'Enabled',
-                                0 => 'Disabled'
+                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                0 => 'PLUGIN_ADMIN.DISABLED'
                             ],
                             'validate' => [
                                 'type' => 'bool'
@@ -62,8 +63,8 @@ return [
                             'highlight' => 1,
                             'default' => 1,
                             'options' => [
-                                1 => 'Enabled',
-                                0 => 'Disabled'
+                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                0 => 'PLUGIN_ADMIN.DISABLED'
                             ],
                             'validate' => [
                                 'type' => 'bool'
@@ -76,8 +77,8 @@ return [
                             'highlight' => 1,
                             'default' => 0,
                             'options' => [
-                                1 => 'Enabled',
-                                0 => 'Disabled'
+                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                0 => 'PLUGIN_ADMIN.DISABLED'
                             ],
                             'validate' => [
                                 'type' => 'bool'
@@ -90,8 +91,8 @@ return [
                             'highlight' => 1,
                             'default' => 1,
                             'options' => [
-                                1 => 'Enabled',
-                                0 => 'Disabled'
+                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                0 => 'PLUGIN_ADMIN.DISABLED'
                             ],
                             'validate' => [
                                 'type' => 'bool'
@@ -104,8 +105,8 @@ return [
                             'highlight' => 0,
                             'default' => 0,
                             'options' => [
-                                1 => 'Enabled',
-                                0 => 'Disabled'
+                                1 => 'PLUGIN_ADMIN.ENABLED',
+                                0 => 'PLUGIN_ADMIN.DISABLED'
                             ],
                             'validate' => [
                                 'type' => 'bool'
@@ -207,6 +208,26 @@ return [
                     'type' => 'section',
                     'title' => 'PLUGIN_FORM.RECAPTCHA',
                     'fields' => [
+                        'recaptcha.version' => [
+                            'type' => 'select',
+                            'label' => 'PLUGIN_FORM.RECAPTCHA_VERSION',
+                            'default' => '2-checkbox',
+                            'options' => [
+                                '2-checkbox' => 'PLUGIN_FORM.RECAPTCHA_VERSION_V2_CHECKBOX',
+                                '2-invisible' => 'PLUGIN_FORM.RECAPTCHA_VERSION_V2_INVISIBLE',
+                                3 => 'PLUGIN_FORM.RECAPTCHA_VERSION_V3_LATEST'
+                            ]
+                        ],
+                        'recaptcha.theme' => [
+                            'type' => 'select',
+                            'label' => 'PLUGIN_FORM.RECAPTCHA_THEME',
+                            'default' => 'light',
+                            'options' => [
+                                'light' => 'PLUGIN_FORM.RECAPTCHA_THEME_LIGHT',
+                                'dark' => 'PLUGIN_FORM.RECAPTCHA_THEME_DARK'
+                            ],
+                            'recaptcha.site_key' => NULL
+                        ],
                         'recaptcha.site_key' => [
                             'type' => 'text',
                             'label' => 'PLUGIN_FORM.RECAPTCHA_SITE_KEY',

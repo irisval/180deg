@@ -17,53 +17,39 @@
     {% block stylesheets %}
         {% do assets.addCss('theme://css/normalize.css', 99) %}
         {% do assets.addCss('theme://css/style.css', 98) %}
-        {% do assets.addCss('theme://css/punch.css', 97) %}
-        {% do assets.addCss('theme://css/skeleton.css', 96) %}
-        {% do assets.addCss('https://fonts.googleapis.com/icon?family=Material+Icons', 95) %}
+        {% do assets.addCss('theme://css/skeleton.css', 97) %}
+        {% do assets.addCss('https://fonts.googleapis.com/icon?family=Material+Icons', 96) %}
     {% endblock %}
     {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/index.js', 99) %}
     {% endblock %}
     {{ assets.js() }}
 
-{% endblock head%}
+{% endblock head %}
 </head>
 
-<body id="top" class="{{ page.header.body_classes }}">
+<body>
 
-{% include 'partials/header.html.twig' %}
-    <!-- <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
-            </a>
+
             {% block header_navigation %}
-            <nav class="main-nav">
+    
                 {% include 'partials/navigation.html.twig' %}
-            </nav>
+   
             {% endblock %}
-        </div>
-    </div> -->
     
 
 
 {% block body %}
-    <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
+        {% block content %}
+        {% endblock %}
+      
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
-        </div>
-    </div>
+     {% include 'partials/footer.html.twig' %}
 {% endblock %}
 
 {% block bottom %}

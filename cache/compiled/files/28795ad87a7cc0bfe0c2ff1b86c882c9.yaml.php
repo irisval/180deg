@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/system/config/system.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452537,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -20,7 +20,9 @@ return [
             'supported' => [
                 
             ],
+            'default_lang' => NULL,
             'include_default_lang' => true,
+            'pages_fallback_only' => false,
             'translations' => true,
             'translations_fallback' => true,
             'session_store_active' => false,
@@ -67,10 +69,10 @@ return [
                 ]
             ],
             'types' => [
-                0 => 'txt',
-                1 => 'xml',
-                2 => 'html',
-                3 => 'htm',
+                0 => 'html',
+                1 => 'htm',
+                2 => 'xml',
+                3 => 'txt',
                 4 => 'json',
                 5 => 'rss',
                 6 => 'atom'
@@ -92,6 +94,7 @@ return [
                 1 => '.idea'
             ],
             'ignore_hidden' => true,
+            'hide_empty_folders' => false,
             'url_taxonomy_filters' => true,
             'frontmatter' => [
                 'process_twig' => false,
@@ -108,6 +111,9 @@ return [
             ],
             'driver' => 'auto',
             'prefix' => 'g',
+            'purge_at' => '0 4 * * *',
+            'clear_at' => '0 3 * * *',
+            'clear_job_type' => 'standard',
             'clear_images_by_default' => true,
             'cli_compatibility' => false,
             'lifetime' => 604800,
@@ -146,6 +152,12 @@ return [
             'display' => 0,
             'log' => true
         ],
+        'log' => [
+            'handler' => 'file',
+            'syslog' => [
+                'facility' => 'local6'
+            ]
+        ],
         'debugger' => [
             'enabled' => false,
             'shutdown' => [
@@ -157,7 +169,8 @@ return [
             'cache_all' => false,
             'cache_perms' => '0755',
             'debug' => false,
-            'auto_fix_orientation' => false
+            'auto_fix_orientation' => false,
+            'seofriendly' => false
         ],
         'media' => [
             'enable_media_timestamp' => false,
@@ -174,6 +187,7 @@ return [
             'initialize' => true,
             'timeout' => 1800,
             'name' => 'grav-site',
+            'uniqueness' => 'path',
             'secure' => false,
             'httponly' => true,
             'split' => true,
@@ -185,6 +199,10 @@ return [
             'method' => 'auto',
             'verify_peer' => true,
             'official_gpm_only' => true
+        ],
+        'accounts' => [
+            'type' => 'data',
+            'storage' => 'file'
         ],
         'strict_mode' => [
             'yaml_compat' => true,

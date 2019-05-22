@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/devtools/blueprints.yaml',
-    'modified' => 1552997662,
+    'modified' => 1558452576,
     'data' => [
         'name' => 'DevTools',
-        'version' => '1.2.1',
+        'version' => '1.2.2',
         'description' => 'Plugin and Theme scaffolding utilities',
         'icon' => 'cogs',
         'author' => [

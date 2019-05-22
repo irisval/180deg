@@ -1,0 +1,31 @@
+.lc-section-contact {
+	.title__underline {
+		text-decoration: underline #FFC80A;
+	}
+	.hero-bg {
+		position: relative;
+		background: url('https://images.pexels.com/photos/6224/hands-people-woman-working.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.7);
+	}
+	/*.hero-bg:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba(0,0,0,0.9);
+		z-index: -10;
+	}*/
+	.hero {
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+	
+
+	
+
+}

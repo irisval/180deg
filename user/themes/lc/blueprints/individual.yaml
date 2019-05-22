@@ -1,0 +1,133 @@
+title: Gallery
+'@extends':
+    type: default
+    context: blueprints://pages
+
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 2
+
+      fields:
+        info:
+          type: tab
+          title: Info
+
+          fields:
+            header.person:
+              type: text
+              label: Person Name
+              default: Samantha Stewart
+              validate:
+                required: true
+            header.tagline:
+              type: text
+              label: Tagline
+              default: The Sky is Blue
+              validate:
+                required: true
+            header.videoURL:
+              type: text
+              label: Video Embed URL
+              default: https://youtube.com
+              validate:
+                required: true
+            header.personBio:
+              type: text
+              label: Person Bio
+              default: Samantha Stewart is a very ambitious and admirable person.
+              validate:
+                required: true
+            header.personHeadshot:
+                type: file 
+                label: Headshot
+                destination: 'self@'
+                multiple: false
+                accept:
+                  - image/*
+                validate:
+                required: true
+            header.taxonomy:
+              type: taxonomy
+              label: PLUGIN_ADMIN.TAXONOMY
+              multiple: true
+              validate:
+                type: array
+        content:
+            fields:
+              content:
+                unset@: true
+              header.list:
+                type: list
+                label: Article Content
+                style: vertical
+                fields:
+                  .fieldselection:
+                    type: fieldselection # new type
+                    select: selection # (1)
+                    fields:
+
+                      # The field for selection - required
+                      .selection: # (1)
+                        type: select
+                        label: Select the type of field you would like to add
+                        placeholder: Choose a component 
+                        default: null
+                        options:
+                          paragraph: Pargraph # (2)
+                          quote: Quote # (2)
+                          img-single: Single Image # (2)
+                          # img-text-double: Inline image and text
+
+                      # Fields for selection
+                      .paragraph: # (2)
+                        type: editor
+                        label: paragraph
+
+                      .quote: # (2)
+                        type: list
+                        style: vertical
+                        label: Add Quote
+                        fields:
+                          .qquote: 
+                            type: text
+                            label: Quote
+                            default: The sky is blue.
+                          .qsource: 
+                            type: text
+                            label: Source
+                            default: Barack Obama
+                          .qcreds:
+                            type: text
+                            label: Source Position
+                            default: Former President
+
+                      .img-single: # (2)
+                        type: file 
+                        label: Single Image
+                        destination: 'self@'
+                        multiple: false
+                        accept:
+                          - image/*
+                          # .caption:
+                          #   type: text
+                          #   label: caption
+                          
+                      # .img-text-double: # (2)
+                      #   type: list
+                      #   style: vertical
+                      #   label: Add Team Member
+                      #   fields:
+                      #     .img:
+                      #       type: file 
+                      #       label: Single Image
+                      #       destination: 'self@'
+                      #       multiple: false
+                      #       accept:
+                      #         - image/*
+                      #     .text: # (2)
+                      #       type: editor
+                      #       label: paragraph
+                      #   

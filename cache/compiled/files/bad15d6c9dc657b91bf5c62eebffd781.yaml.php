@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/login/login.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452573,
     'data' => [
         'enabled' => true,
         'built_in_css' => true,
@@ -16,6 +16,7 @@ return [
         'route_profile' => '/user_profile',
         'route_register' => '/user_register',
         'route_unauthorized' => '/user_unauthorized',
+        'twofa_enabled' => false,
         'dynamic_page_visibility' => false,
         'parent_acl' => false,
         'protect_protected_page_media' => false,
@@ -24,10 +25,11 @@ return [
             'timeout' => 604800,
             'name' => 'grav-rememberme'
         ],
-        'max_pw_resets_count' => 0,
+        'max_pw_resets_count' => 2,
         'max_pw_resets_interval' => 60,
-        'max_login_count' => 0,
-        'max_login_interval' => 2,
+        'max_login_count' => 5,
+        'max_login_interval' => 10,
+        'ipv6_subnet_size' => 64,
         'user_registration' => [
             'enabled' => false,
             'fields' => [
@@ -36,7 +38,8 @@ return [
                 2 => 'email',
                 3 => 'fullname',
                 4 => 'title',
-                5 => 'level'
+                5 => 'level',
+                6 => 'twofa_enabled'
             ],
             'default_values' => [
                 'level' => 'Newbie'

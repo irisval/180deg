@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/admin/admin.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452592,
     'data' => [
         'enabled' => true,
         'route' => '/admin',
@@ -12,6 +12,10 @@ return [
         'body_classes' => '',
         'content_padding' => true,
         'twofa_enabled' => true,
+        'log_viewer_files' => [
+            0 => 'grav',
+            1 => 'email'
+        ],
         'sidebar' => [
             'activate' => 'tab',
             'hover_delay' => 100,
@@ -28,7 +32,8 @@ return [
             'dashboard-pages' => true
         ],
         'pages' => [
-            'show_parents' => 'both'
+            'show_parents' => 'both',
+            'show_modular' => true
         ],
         'session' => [
             'timeout' => 1800

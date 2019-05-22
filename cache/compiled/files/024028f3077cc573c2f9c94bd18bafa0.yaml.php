@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/problems/blueprints.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452599,
     'data' => [
         'name' => 'Problems',
-        'version' => '2.0.2',
+        'version' => '2.0.3',
         'description' => 'Detects and reports problems found in the site.',
         'icon' => 'exclamation-circle',
         'author' => [
@@ -35,7 +35,8 @@ return [
                 ],
                 'built_in_css' => [
                     'type' => 'toggle',
-                    'label' => 'Use built in CSS',
+                    'label' => 'PLUGIN_PROBLEMS.BUILTIN_CSS',
+                    'help' => 'PLUGIN_PROBLEMS.BUILTIN_CSS_HELP',
                     'highlight' => 1,
                     'default' => 1,
                     'options' => [

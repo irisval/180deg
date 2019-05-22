@@ -1,4 +1,67 @@
-{% macro loop(page) %}
+      <div id="lc-section-nav">
+        <div class="nav__top">
+            <div class="container">
+            <div class="recent is-pulled-left">
+                <p>Most recent post:</p>
+                <a href="#">Sally Jenkins</a>
+            </div>
+            <div class="socials is-pulled-right">
+                <a href=""><i class="has-text-white fab fa-facebook-f"></i></a>
+                <a href=""><i class="has-text-white fab fa-twitter"></i></a>
+                <a href=""><i class="has-text-white fab fa-pinterest-p"></i></a>
+                <a href=""><i class="has-text-white fab fa-linkedin-in"></i></a>
+                <a href=""><i class="has-text-white far fa-envelope"></i></a>
+            </div>
+            </div>
+        </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+         <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img id="logo" src="{{ url('theme://images/logo.png') }}">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">About</a>
+          <a class="navbar-item">Conversations</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Categories</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">Tech</a>
+              <a class="navbar-item">Gender</a>
+              <a class="navbar-item">Race</a>
+          
+            </div>
+          </div>
+            <a class="navbar-item">Contact</a>
+            <a class="navbar-item">Get Involved</a>
+        </div>
+
+        <div class="navbar-end">
+        </div>
+      </div>
+    </div>
+</nav>
+<div class="absolute">
+    <span id="tagline"> engineering social change</span>
+</div>
+</div>
+
+<!-- MACRO CODE -->
+
+{# {% macro loop(page) %}
+
+ <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+
+     {{ config.site.title }}
     {% for p in page.children.visible %}
         {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
         {% if p.children.visible.count > 0 %}
@@ -45,4 +108,5 @@
         </li>
     {% endfor %}
 </ul>
+#}
 

@@ -1,0 +1,394 @@
+.lc-section-indiv {
+	.category {
+			background-image: #fff;
+	    	background: linear-gradient(to right, #FFDA78, #FFB209);
+	    	-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 17px;
+    		font-weight: $w-heavy;
+		}
+	.hero-bg {
+		position: relative;
+		background: url('https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.7);
+		.category-top {
+			margin-top: 0.75em;
+    		margin-bottom: 0.75em;
+    		.category {
+				font-size: 15.5px;
+	    		margin-bottom: -7px;
+			}
+		}
+	}
+	
+
+	.subtitle {
+		text-transform: uppercase;
+		font-weight: $w-black !important;
+		letter-spacing: 5px;
+		margin: 0 auto;
+		margin-bottom: 2em;
+		text-align: center;
+		color: #333355;
+	}
+	.indiv-video {
+		background-color: #f8f8f8 !important;
+    	opacity: .99;
+		padding: 1.5rem 1.5rem 2rem;
+    	margin-bottom: 21px;
+		.buttons {
+			margin-top: 1em;
+
+				.btns {
+					margin: 0 auto;
+					text-align: center;
+					margin-top: 2em;
+				}
+				.button {
+					border-radius: 2px !important;
+				}
+				.text {
+					text-align: center;
+				    line-height: 30px;
+				    font-size: 18px;
+				    width: 750px;
+				    margin: 0 auto;
+				    padding-top: 10px;
+					a {
+						text-decoration: none;
+		    			border-bottom: 1.5px solid #84A5BD !important;
+					}
+				}
+				span {
+						
+						    text-transform: uppercase;
+					    letter-spacing: 1px;
+					    font-weight: $w-heavy;
+					        font-size: 10px;
+
+					}
+		}
+		.video-player-container {
+			figure {
+				background-image: linear-gradient(-180deg, rgba(255,255,255,0.15) 0%, #000000 124%);
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+				img {
+					z-index: -1000 !important;
+				}
+				&.yt-video {
+				position: relative;
+				padding-bottom: 56.25%;
+				padding-top: 30px;
+				height: 0;
+				overflow: hidden;
+				iframe, object, embed {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+				}
+				.vid-button {
+					position: absolute;
+				    left: 47.5%;
+    				bottom: 45%;
+				    padding: 11px 12px 8px 15px;
+				    border-radius: 4px;
+				    border: 1.5px solid $primary;
+				    i {
+				    	background-image: #fff;
+				    	background: linear-gradient(to right, #FFDA78, #FFB209);
+				    	-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						font-size: 1.5em;
+				    }
+			
+				}
+				div:first-of-type {
+					color: white;
+				    bottom: 47px;
+				    letter-spacing: 2.5px;
+				    text-transform: uppercase;
+				    font-size: 11px;
+				    font-weight: $w-thin;
+					.vid-latest-text {
+						border-right: 2px solid white;
+	    				padding-right: 10px;
+					}
+					.vid-ts {
+						padding-left: 7px;
+					}
+				}
+				.vid-text {
+					position: absolute;
+					bottom: 1em;
+					left: 30px;
+
+					.vid-title {
+						color: white;
+					    font-weight: $w-black;
+					    font-size: 23px;
+					    letter-spacing: 1px;
+					}
+					.vid-tagline {
+						color: white;
+						font-weight: $w-normal;
+						margin-left: 6px;
+						font-size: 20px;
+						letter-spacing: 1px;
+					}
+				}
+			}
+	
+		}
+		.watch-next-container {
+			background-color: #496173;
+		    padding: 1em 10px 1.5em;
+		    max-height: 17em;
+		    overflow: scroll;
+		    margin-top: 27px;
+			.next {
+				background: linear-gradient(to right, rgba(255,200,10,74), #FFB209);
+			    color: white;
+			    font-weight: $w-black;
+			    letter-spacing: 1px;
+			    text-transform: uppercase;
+			    position: absolute;
+			    margin-left: -10px;
+			    top: 12px;
+			    padding: 4px 13px;
+			    font-size: 13px;
+			}
+			.media:first-of-type {
+				border-top: 2px solid $primary;
+				padding-top: 1em;
+			}
+			.media-left {
+				img {
+					max-width: 100px;
+				}
+			}
+			.category {
+				color: #FFE17A;
+				text-transform: uppercase !important;
+				font-weight: $w-heavy;
+				font-size: 10px;
+			}
+			.vid-title {
+				color: white !important;
+				font-weight: $w-medium !important;
+				font-size: 15px;
+    			line-height: 18px;
+			}
+		}
+		.scroll p {
+			background-color: #84A5BD;
+		    text-align: center;
+		    color: white;
+		}
+		.subscribe-block {
+			margin-top: 20px;
+			/*.text {
+				color: #8D99AE
+			}*/
+			.text {
+				color: #8D99AE;
+			    font-size: 13px;
+			    line-height: 17px;
+			    margin-bottom: 12px;
+			}
+			.input {
+				box-shadow: none;
+			    border-radius: 1px;
+			    font-size: 13px;
+			    padding-right: 3em;
+			}
+		}
+		
+	}
+	.indiv-content {
+		padding: 0 1.5rem 3rem !important;
+		.subtitle {
+			margin-bottom: 10px;
+		}
+		
+		.info {
+			font-weight: $w-light;
+			font-size: 14.5px;
+    		letter-spacing: 1px;
+    		span:first-of-type {
+				border-right: 2px solid #595151;
+				padding-right: 5px;
+    		}
+		}
+		.indiv-content-body {
+			margin-top: 1.2em;
+			margin-right: 0.5em;
+			.text {
+				font-weight: $w-light;
+				margin-bottom: 2.5em;
+			}
+			figure {
+				img {
+					border: 6px solid $primary;
+				}
+			}
+			figcaption, .caption {
+				text-align: center;
+			    font-weight: 700;
+			    font-size: 13px;
+			    color: #84A5BD;
+			   
+			}
+			figcaption {
+				 padding-top: 5px;
+			}
+			.image-text-container {
+				margin-bottom: 2.5em;
+			}
+			.image-solo-container {
+				max-width: 60%;
+				margin: 0 auto;
+				margin-bottom: 2.5em;
+			}
+		}
+		.popular__list {
+			width: 90%;
+	    	float: left;
+			.title__lower {
+				margin-right: 0;
+				margin-left: 48px;
+
+			}
+			.popular__item {
+				padding-left: 37px;
+			}
+			li {
+				margin-right: -52px;
+			}
+			li:before {
+				position: absolute;
+			}
+		}
+		.tags-section {
+			margin-left: 0;
+		}
+	}
+	.whois {
+		position: relative;
+		padding: 2em;
+		background: url('https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.7);
+		color: white;
+		border-radius: 5px;
+		figure {
+			border: 6px solid $primary;
+		}
+		.subtitle {
+			color: #fff !important;
+			margin-bottom: 20px;
+		}
+	}
+
+.quote-spacer {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 2.5em;
+}
+		/*ha*/
+.testimonial-quote {
+    font-size: 16px;
+    margin-top: 2em;
+    margin-left: 20px;
+}
+
+.testimonial-quote blockquote {
+    /* Negate theme styles */
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.4 !important;
+    margin: 0;
+    position: relative;
+/*    text-shadow: 0 1px white;*/
+    z-index: 600;
+}
+
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+
+.testimonial-quote blockquote p:first-child:before {
+    content: '\201C';
+    color: #84A5BD;
+    font-size: 7.5em;
+    font-weight: $w-heavy;
+    opacity: 0.6;
+    position: absolute;
+    top: 31px;
+    left: -.2em;    
+    text-shadow: none;
+    z-index: -300;
+    font-family: Georgia, serif !important;
+}
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+.testimonial-quote blockquote p {
+    color: #333355;
+    line-height: 44px;
+    font-weight: $w-heavy;
+
+}
+
+.testimonial-quote cite {
+    color: #333355;
+    display: block;
+    font-size: .8em; 
+    margin-top: 12px;
+    span {
+		color: #333355;
+	    font-size: 1em;
+	    font-style: normal;
+	    font-weight: 700;
+	    letter-spacing: 1px;
+	    text-transform: uppercase;
+	    text-shadow: 0 1px white; 
+    }
+}
+  
+
+.testimonial-quote {
+    position: relative;
+}
+
+.testimonial-quote.right .quote-container {
+    padding-left: 0;
+    padding-right: 160px; 
+}
+
+.testimonial-quote.right img {
+    left: auto;
+    right: 0;
+}
+	/*ha*/
+}
+.subscribe.indiv {
+	background: linear-gradient(to right,rgba(76,86,93,0.75),rgba(76,86,93,93)), url("https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") !important;
+	background-size: cover; 
+	background-position: center;
+	background-repeat: no-repeat;
+}

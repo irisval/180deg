@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/system/config/security.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452537,
     'data' => [
         'xss_whitelist' => [
             0 => 'admin.super'
@@ -13,6 +13,14 @@ return [
             'moz_binding' => true,
             'html_inline_styles' => true,
             'dangerous_tags' => true
+        ],
+        'xss_invalid_protocols' => [
+            0 => 'javascript',
+            1 => 'livescript',
+            2 => 'vbscript',
+            3 => 'mocha',
+            4 => 'feed',
+            5 => 'data'
         ],
         'xss_dangerous_tags' => [
             0 => 'applet',

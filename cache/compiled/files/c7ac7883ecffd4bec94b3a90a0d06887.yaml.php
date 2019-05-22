@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/themes/quark/blueprints.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558453182,
     'data' => [
         'name' => 'Quark',
-        'version' => '1.2.5',
+        'version' => '2.0.1',
         'description' => 'New Grav Default Theme',
         'icon' => 'microchip',
         'author' => [
@@ -21,7 +21,7 @@ return [
         'dependencies' => [
             0 => [
                 'name' => 'grav',
-                'version' => '>=1.5.0'
+                'version' => '>=1.6.0'
             ]
         ],
         'form' => [

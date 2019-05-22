@@ -1,13 +1,25 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1553862218,
-    'checksum' => '7f788a3bc74d88812dbf639c1c062d1d',
+    'timestamp' => 1558474881,
+    'checksum' => '3df02178495e64726575b04ee4aaaf0d',
     'files' => [
         'user/config' => [
+            'backups' => [
+                'file' => 'user/config/backups.yaml',
+                'modified' => 1558452542
+            ],
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1552997574
+            ],
+            'plugins/image-captions' => [
+                'file' => 'user/config/plugins/image-captions.yaml',
+                'modified' => 1558458020
+            ],
+            'scheduler' => [
+                'file' => 'user/config/scheduler.yaml',
+                'modified' => 1558452542
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -23,29 +35,37 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1553862218
+                'modified' => 1558474879
+            ],
+            'themes/quark' => [
+                'file' => 'user/config/themes/quark.yaml',
+                'modified' => 1558453185
             ]
         ],
         'system/config' => [
+            'backups' => [
+                'file' => 'system/config/backups.yaml',
+                'modified' => 1558452537
+            ],
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452537
             ],
             'security' => [
                 'file' => 'system/config/security.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452537
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452537
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452537
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452537
             ]
         ],
         'user/plugins' => [
@@ -53,33 +73,37 @@ return [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
                 'modified' => 1549559364
             ],
+            'plugins/image-captions' => [
+                'file' => 'user/plugins/image-captions/image-captions.yaml',
+                'modified' => 1558455925
+            ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452582
             ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452592
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452599
             ],
             'plugins/devtools' => [
                 'file' => 'user/plugins/devtools/devtools.yaml',
-                'modified' => 1552997662
+                'modified' => 1558452576
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452597
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452573
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1549559364
+                'modified' => 1558452585
             ]
         ]
     ],
@@ -94,6 +118,14 @@ return [
                     2 => 'blue',
                     3 => 'green'
                 ]
+            ],
+            'image-captions' => [
+                'enabled' => false,
+                'built_in_css' => false,
+                'entire_page' => false,
+                'scope' => 'img.caption',
+                'figure_class' => 'is-5by3',
+                'figcaption_class' => 'img'
             ],
             'form' => [
                 'enabled' => true,
@@ -112,6 +144,12 @@ return [
                     'accept' => [
                         0 => 'image/*'
                     ]
+                ],
+                'recaptcha' => [
+                    'version' => '2-checkbox',
+                    'theme' => 'light',
+                    'site_key' => NULL,
+                    'secret_key' => NULL
                 ]
             ],
             'admin' => [
@@ -123,6 +161,10 @@ return [
                 'body_classes' => '',
                 'content_padding' => true,
                 'twofa_enabled' => true,
+                'log_viewer_files' => [
+                    0 => 'grav',
+                    1 => 'email'
+                ],
                 'sidebar' => [
                     'activate' => 'tab',
                     'hover_delay' => 100,
@@ -139,7 +181,8 @@ return [
                     'dashboard-pages' => true
                 ],
                 'pages' => [
-                    'show_parents' => 'both'
+                    'show_parents' => 'both',
+                    'show_modular' => true
                 ],
                 'session' => [
                     'timeout' => 1800
@@ -199,6 +242,7 @@ return [
                 'route_profile' => '/user_profile',
                 'route_register' => '/user_register',
                 'route_unauthorized' => '/user_unauthorized',
+                'twofa_enabled' => false,
                 'dynamic_page_visibility' => false,
                 'parent_acl' => false,
                 'protect_protected_page_media' => false,
@@ -207,10 +251,11 @@ return [
                     'timeout' => 604800,
                     'name' => 'grav-rememberme'
                 ],
-                'max_pw_resets_count' => 0,
+                'max_pw_resets_count' => 2,
                 'max_pw_resets_interval' => 60,
-                'max_login_count' => 0,
-                'max_login_interval' => 2,
+                'max_login_count' => 5,
+                'max_login_interval' => 10,
+                'ipv6_subnet_size' => 64,
                 'user_registration' => [
                     'enabled' => false,
                     'fields' => [
@@ -219,7 +264,8 @@ return [
                         2 => 'email',
                         3 => 'fullname',
                         4 => 'title',
-                        5 => 'level'
+                        5 => 'level',
+                        6 => 'twofa_enabled'
                     ],
                     'default_values' => [
                         'level' => 'Newbie'
@@ -247,6 +293,12 @@ return [
                 'from_name' => NULL,
                 'to' => NULL,
                 'to_name' => NULL,
+                'queue' => [
+                    'enabled' => false,
+                    'flush_frequency' => '* * * * *',
+                    'flush_msg_limit' => 10,
+                    'flush_time_limit' => 100
+                ],
                 'mailer' => [
                     'engine' => 'sendmail',
                     'smtp' => [
@@ -262,6 +314,34 @@ return [
                 ],
                 'content_type' => 'text/html',
                 'debug' => false
+            ]
+        ],
+        'backups' => [
+            'purge' => [
+                'trigger' => 'space',
+                'max_backups_count' => 25,
+                'max_backups_space' => 5,
+                'max_backups_time' => 365
+            ],
+            'profiles' => [
+                0 => [
+                    'name' => 'Default Site Backup',
+                    'root' => '/',
+                    'schedule' => false,
+                    'schedule_at' => '0 3 * * *',
+                    'exclude_paths' => '/backup
+/cache
+/images
+/logs
+/tmp',
+                    'exclude_files' => '.DS_Store
+.git
+.svn
+.hg
+.idea
+.vscode
+node_modules'
+                ]
             ]
         ],
         'media' => [
@@ -541,6 +621,14 @@ return [
                 'html_inline_styles' => true,
                 'dangerous_tags' => true
             ],
+            'xss_invalid_protocols' => [
+                0 => 'javascript',
+                1 => 'livescript',
+                2 => 'vbscript',
+                3 => 'mocha',
+                4 => 'feed',
+                5 => 'data'
+            ],
             'xss_dangerous_tags' => [
                 0 => 'applet',
                 1 => 'meta',
@@ -598,7 +686,7 @@ return [
         'streams' => [
             'schemes' => [
                 'image' => [
-                    'type' => 'ReadOnlyStream',
+                    'type' => 'Stream',
                     'paths' => [
                         0 => 'user://images',
                         1 => 'system://images'
@@ -635,7 +723,9 @@ return [
                 'supported' => [
                     
                 ],
+                'default_lang' => NULL,
                 'include_default_lang' => true,
+                'pages_fallback_only' => false,
                 'translations' => true,
                 'translations_fallback' => true,
                 'session_store_active' => false,
@@ -707,6 +797,7 @@ return [
                     1 => '.idea'
                 ],
                 'ignore_hidden' => true,
+                'hide_empty_folders' => false,
                 'url_taxonomy_filters' => true,
                 'frontmatter' => [
                     'process_twig' => false,
@@ -723,6 +814,9 @@ return [
                 ],
                 'driver' => 'auto',
                 'prefix' => 'g',
+                'purge_at' => '0 4 * * *',
+                'clear_at' => '0 3 * * *',
+                'clear_job_type' => 'standard',
                 'clear_images_by_default' => true,
                 'cli_compatibility' => false,
                 'lifetime' => 604800,
@@ -761,6 +855,12 @@ return [
                 'display' => true,
                 'log' => true
             ],
+            'log' => [
+                'handler' => 'file',
+                'syslog' => [
+                    'facility' => 'local6'
+                ]
+            ],
             'debugger' => [
                 'enabled' => false,
                 'shutdown' => [
@@ -773,7 +873,8 @@ return [
                 'cache_all' => false,
                 'cache_perms' => '0755',
                 'debug' => false,
-                'auto_fix_orientation' => false
+                'auto_fix_orientation' => false,
+                'seofriendly' => false
             ],
             'media' => [
                 'enable_media_timestamp' => false,
@@ -791,6 +892,7 @@ return [
                 'initialize' => true,
                 'timeout' => 1800,
                 'name' => 'grav-site',
+                'uniqueness' => 'path',
                 'secure' => false,
                 'httponly' => true,
                 'split' => true,
@@ -803,9 +905,33 @@ return [
                 'verify_peer' => true,
                 'official_gpm_only' => true
             ],
+            'accounts' => [
+                'type' => 'data',
+                'storage' => 'file'
+            ],
             'strict_mode' => [
                 'yaml_compat' => true,
                 'twig_compat' => true
+            ]
+        ],
+        'scheduler' => [
+            
+        ],
+        'themes' => [
+            'quark' => [
+                'enabled' => true,
+                'production-mode' => true,
+                'grid-size' => 'grid-lg',
+                'header-fixed' => true,
+                'header-animated' => true,
+                'header-dark' => false,
+                'header-transparent' => false,
+                'sticky-footer' => true,
+                'blog-page' => '/blog',
+                'spectre' => [
+                    'exp' => false,
+                    'icons' => false
+                ]
             ]
         ]
     ]

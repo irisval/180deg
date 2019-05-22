@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+/*$gap: 25px;*/
+$family-primary: "avenir", sans-serif;
+$primary: #FFC80A;
+$primary-invert: #FFF;
+$secondary: #333355;
+$secondary-invert: #FFF;
+$body: #4D4444;
+$w-thin: 200;
+$w-light: 300;
+$w-normal: 400;
+$w-medium: 500;
+$w-heavy: 600;
+$w-black: 700;
+$body-weight: $w-normal;
+$footer-padding: 2rem 7.5rem 3em;
+$tag-radius: 1px;
+
+/* background-image: linear-gradient(-90deg, rgba(255,200,10,0.74) 45%, rgba(132,165,189,0.76) 58%);
+*/
+@import "../node_modules/bulma/bulma.sass";
+@import "__fonts.scss";
+@import "__nav.scss";
+@import "__home.scss";
+@import "__contact.scss";
+@import "__involved.scss";
+@import "__cards.scss";
+@import "__category.scss";
+@import "__conversations.scss";
+@import "__individual.scss";
+@import "__footer.scss";
+@import "__forms.scss";
+@import "__about.scss";
+@import "__generic.scss";
+
+/*https://engageinteractive.co.uk/blog/top-10-scss-mixins*/
+
+/*$family-primary: 'Lato', sans-serif;
+$success: #FFF;
+$secondary: #212121;
+$primary: #FFF;
+$primary-invert: $secondary;
+$secondary-invert: $success;
+$tertiary: #007FFF;
+$tertiary-invert: $success;
+$quaternary: #E9EBF8;
+$quaternary-invert: $success;
+$gap: 150px;*/

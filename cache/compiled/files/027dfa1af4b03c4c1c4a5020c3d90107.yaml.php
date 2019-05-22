@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/system/blueprints/config/security.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452537,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SECURITY',
         'form' => [
@@ -48,6 +48,15 @@ return [
                     'default' => true,
                     'validate' => [
                         'type' => 'bool'
+                    ]
+                ],
+                'xss_invalid_protocols' => [
+                    'type' => 'selectize',
+                    'size' => 'large',
+                    'label' => 'PLUGIN_ADMIN.XSS_INVALID_PROTOCOLS_LIST',
+                    'classes' => 'fancy',
+                    'validate' => [
+                        'type' => 'commalist'
                     ]
                 ],
                 'xss_enabled.moz_binding' => [

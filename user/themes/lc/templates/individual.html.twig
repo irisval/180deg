@@ -1,0 +1,395 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+        <div class="lc-section-indiv">
+      <section class="hero hero-bg is-primary">
+         <div class="category-top">
+            <div class="has-text-centered">
+               <p class="category">{{ header.taxonomy.category[0] }}</p>
+               <p class="title">11. {{ header.person }}</p>
+            </div>
+         </div>
+      </section>
+      <section class="section indiv-video">
+         <div class="container">
+            <div class="columns">
+               <div class="column is-7 is-offset-1">
+                  <div class="video-player-container">
+                      <figure id="video-embed" class="hidden yt-video image is-5by3 video-shadow">
+                        <iframe width="100%" height="auto" src="{{ header.videoURL }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     </figure>
+                     <figure id="video-overlay" class="image is-5by3 video-shadow">
+                        <img src="https://images.unsplash.com/photo-1505682614136-0a12f9f7beea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80">
+                        <a class="vid-button"><i class="fas fa-sm fa-play"></i></a>
+                        <div class="vid-text">
+                           <span class="vid-latest-text">conversation</span>
+                           <span class="vid-ts">11:21</span>
+                        </div>
+                        <div class="vid-text">
+                           <span class="vid-title">89. Darrell Scott:</span>
+                           <span class="vid-tagline">Get You a Good Squad</span> 
+                        </div>
+                     </figure>
+                  </div>
+                  <div class="buttons">
+                     <a class="button is-link is-inline-block">
+                     <span class="icon">
+                     <i class="fab fa-facebook-f"></i>
+                     </span>
+                     <span>share on facebook</span>
+                     </a>
+                     <a class="button is-info is-inline-block">
+                     <span class="icon">
+                     <i class="fab fa-twitter"></i>
+                     </span>
+                     <span>tweet</span>
+                     </a>
+                     <!--    <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                        <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                         <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                          <a href="#"> <i class="fab fa-facebook-f"></i></a> -->
+                  </div>
+               </div>
+               <div class="column is-3">
+                  <div class="watch-next-container">
+                     <span class="next">watch next</span>
+                     <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">technology</p>
+                              <p class="vid-title">What It Really Means to Be An Ally</p>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">technology</p>
+                              <p class="vid-title">What It Really Means to Be An Ally</p>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">technology</p>
+                              <p class="vid-title">What It Really Means to Be An Ally</p>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">technology</p>
+                              <p class="vid-title">What It Really Means to Be An Ally</p>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">technology</p>
+                              <p class="vid-title">What It Really Means to Be An Ally</p>
+                           </div>
+                        </div>
+                     </article>
+                  </div>
+                  <span class="scroll">
+                     <p>scroll for more</p>
+                  </span>
+                  <div class="subscribe-block">
+                     <p class="text">Wanted to be notified when this post gets updated? Subcribe here!</p>
+                     <div class="field has-addons">
+                        <input class="input" type="text" placeholder="Enter Your Email">
+                        <div class="control">
+                           <button type="submit" class="subscribe-button is-primary">Choose</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="section indiv-content">
+         <div class="container">
+            <div class="columns">
+               <div class="column is-8 is-offset-1">
+                  <span class="category is-block">technology</span>
+                  <p class="subtitle is-4 gradient-yb">this is the article title</p>
+                  <div class="info">
+                     <span class="is-inline-block">{{ header.date|date("m/d/Y") }}</span>
+                     <span class="is-inline-block">Interview By John Purcell</span>
+                  </div>
+                  <div class="indiv-content-body">
+                        {{ page.content }}
+                        {% for p in page.header.list %}
+                        {% set item = p.fieldselection %}
+                        {% if item.selection == 'paragraph' %}
+                             <p class="text">{{ item.paragraph }}</p>
+                        {% elseif item.selection == 'img-single' %}
+                              {{ item.img-single[0] }}
+                            <div class="image-solo-container">
+                              <figure class="image landscape is-5by3 img-shadow">
+                                 <img src="{{ page.media[item.img-single|first.path] }}">
+                              </figure>
+                              <p class="caption">this is the caption of the image</p>
+                           </div>
+                        {% else %}
+                        {% for q in item.quote %}
+                            <div class="quote-spacer">
+                              <div class="testimonial-quote group">
+                                 <div class="quote-container">
+                                    <blockquote>
+                                       <p>{{ q.qquote }}</p>
+                                    </blockquote>
+                                    <cite><span>{{ q.qsource }}</span><br>{{ q.qcreds }}
+                                    </cite>
+                                 </div>
+                              </div>
+                           </div>
+                        {% endfor %}
+
+                          
+                        {% endif %}
+                            
+
+                        {% endfor %}
+                     {# <p class="text">Lorem Khaled Ipsum is a major key to success. The key to more success is to get a massage once a week, very important, major key, cloth talk. Find peace, life is like a water fall, you’ve gotta flow. Special cloth alert. Another one. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. They will try to close the door on you, just open it.</p>
+                     <!-- image text inline -->
+                     <div class="image-text-container">
+                        <div class="columns is-vcentered">
+                           <div class="column is-half">
+                              <figure class="image landscape is-5by3 img-shadow">
+                                 <img src="https://images.unsplash.com/photo-1533850595620-7b1711221751?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2014&q=80">
+                              </figure>
+                              <p class="caption">this is the caption of the image</p>
+                           </div>
+                           <div class="column is-half">
+                              <p class="text">You should never complain, complaining is a weak emotion, you got life, we breathing, we blessed. Eliptical talk. Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- image text inline -->
+                     <p class="text">You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. You smart, you loyal, you a genius. They will try to close the door on you, just open it. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there.</p>
+                     <!-- quote -->
+                     <div class="quote-spacer">
+                        <div class="testimonial-quote group">
+                           <div class="quote-container">
+                              <blockquote>
+                                 <p>Obama says that culture is very, very, extremely, terribly important for living a very good, long, and fulfilling life.”</p>
+                              </blockquote>
+                              <cite><span>Kristi Bruno</span><br>
+                              Social Media Specialist<br>
+                              American College of Chest Physicians
+                              </cite>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- end quote -->
+
+                     <p class="text">You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. You smart, you loyal, you a genius. They will try to close the door on you, just open it. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there.</p>
+                     <!-- solo image -->
+                     <div class="image-solo-container">
+                        <figure class="image landscape is-5by3 img-shadow">
+                           <img src="https://images.unsplash.com/photo-1533850595620-7b1711221751?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2014&q=80">
+                        </figure>
+                        <p class="caption">this is the caption of the image</p>
+                     </div>
+                     <!-- solo image -->
+                     <p class="text">You do know, you do know that they don’t want you to have lunch. I’m keeping it real with you, so what you going do is have lunch. You smart, you loyal, you a genius. They will try to close the door on you, just open it. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there.</p>
+                 #}
+                  </div>
+                  <!-- whois -->
+                  <div class="whois has-shadows">
+                     <div class="image-text-container">
+                        <div class="columns is-vcentered">
+                           <div class="column is-one-quarter">
+                              <figure class="image landscape is-1by1 img-shadow">
+                                 <img src="{{ header.personHeadshot|first.path }}">
+                              </figure>
+                           </div>
+                           <div class="column is-three-quarters">
+                              <p class="subtitle is-4 gradient-yellow">who is {{ header.person }}?</p>
+                              <p class="text">{{ header.personBio }}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- whois -->
+               </div>
+               <div class="column is-3">
+                  <div class="spacer">&nbsp;</div>
+                  <div class="tags-section">
+                     <p class="title__lower gradient-yb is-5">category tags</p>
+                     <div class="tags">
+
+                  
+
+                        {% for t in header.taxonomy.tag %}
+                           <a href="#" class="tag is-link">#{{ t }}</a>
+                        {% endfor %}
+                       <!--  <a href="#" class="tag is-link">#music</a>
+                        <a href="#" class="tag is-link">#volunteering</a>
+                        <a href="#" class="tag is-link">#changemakers</a>
+                        <a href="#" class="tag is-link">#changemakers</a>
+                        <a href="#" class="tag is-link">#government</a>
+                        <a href="#" class="tag is-link">#books</a>
+                        <a href="#" class="tag is-link">#adversity</a> -->
+                     </div>
+                  </div>
+                  <div class="spacer">&nbsp;</div>
+                  <ol class="popular__list">
+                     <p class="title__lower gradient-yellow is-5">currently popular</p>
+                     <li>
+                        <span class="popular__item">
+                        <span class="is-inline-block left">84. Jane Doe:&nbsp;</span><span class="right is-inline-block">How to Help Others</span>
+                        <span class="is-block bottom">TECHNOLOGY</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="popular__item">
+                        <span class="is-inline-block left">84. Jane Doe:&nbsp;</span><span class="right is-inline-block">How to Help Others</span>
+                        <span class="is-block bottom">TECHNOLOGY</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="popular__item">
+                        <span class="is-inline-block left">84. Jane Doe:&nbsp;</span><span class="right is-inline-block">How to Help Others</span>
+                        <span class="is-block bottom">TECHNOLOGY</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="popular__item">
+                        <span class="is-inline-block left">84. Jane Doe:&nbsp;</span><span class="right is-inline-block">How to Help Others</span>
+                        <span class="is-block bottom">TECHNOLOGY</span>
+                        </span>
+                     </li>
+                     <li>
+                        <span class="popular__item">
+                        <span class="is-inline-block left">84. Jane Doe:&nbsp;</span><span class="right is-inline-block">How to Help Others</span>
+                        <span class="is-block bottom">TECHNOLOGY</span>
+                        </span>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+      </section>
+            <section class="section indiv-comments">
+            <div class="container">
+                     <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://lets-care.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+      </section>
+      <section class="section indiv-recent-posts recent-posts">
+      <div class="container">
+      <div class="has-text-centered">
+      <p class="title gradient-yellow">Recent Posts</p>
+      </div>
+      <div class="columns">
+      <div class="column is-one-third">
+      <!-- start featured -->
+      <div class="featured-card card">
+      <div class="card-image">
+      <figure class="image is-2by1">
+      <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+      </figure>
+      <div class="tease__post-type">
+      <a href="#">Culture</a>
+      </div>
+      </div>
+      <div class="card-content">
+      <p class="title is-5">84. John Smith</p>
+      <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+      <div class="card-tags">
+      <a class="tag" href="#">#css</a>
+      <a class="tag" href="#">#responsive</a>
+      <a class="tag" href="#">#tech</a>
+      </div>
+      </div>
+      </div>
+      <!-- end featured -->
+      </div>
+      <div class="column is-one-third">
+      <!-- start featured -->
+      <div class="featured-card card">
+      <div class="card-image">
+      <figure class="image is-2by1">
+      <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+      </figure>
+      <div class="tease__post-type">
+      <a href="#">Culture</a>
+      </div>
+      </div>
+      <div class="card-content">
+      <p class="title is-5">84. John Smith</p>
+      <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+      <div class="card-tags">
+      <a class="tag" href="#">#css</a>
+      <a class="tag" href="#">#responsive</a>
+      <a class="tag" href="#">#tech</a>
+      </div>
+      </div>
+      </div>
+      <!-- end featured -->
+      </div>
+      <div class="column is-one-third">
+      <!-- start featured -->
+      <div class="featured-card card">
+      <div class="card-image">
+      <figure class="image is-2by1">
+      <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+      </figure>
+      <div class="tease__post-type">
+      <a href="#">Culture</a>
+      </div>
+      </div>
+      <div class="card-content">
+      <p class="title is-5">84. John Smith</p>
+      <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+      <div class="card-tags">
+      <a class="tag" href="#">#css</a>
+      <a class="tag" href="#">#responsive</a>
+      <a class="tag" href="#">#tech</a>
+      </div>
+      </div>
+      </div>
+      <!-- end featured -->
+      </div>
+      </div>
+      </div>
+      </section>
+      </div>
+{% endblock %}

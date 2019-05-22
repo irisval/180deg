@@ -2,10 +2,11 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/login/blueprints.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452573,
     'data' => [
         'name' => 'Login',
-        'version' => '2.8.3',
+        'version' => '3.0.2',
+        'testing' => false,
         'description' => 'Enables user authentication and login screen.',
         'icon' => 'sign-in',
         'author' => [
@@ -20,15 +21,15 @@ return [
         'dependencies' => [
             0 => [
                 'name' => 'grav',
-                'version' => '>=1.4.4'
+                'version' => '>=1.6.7'
             ],
             1 => [
                 'name' => 'form',
-                'version' => '>=2.13.4'
+                'version' => '>=3.0.0'
             ],
             2 => [
                 'name' => 'email',
-                'version' => '>=2.7.0'
+                'version' => '>=3.0.0'
             ]
         ],
         'form' => [
@@ -127,6 +128,20 @@ return [
                                     'highlight' => 0,
                                     'default' => 0,
                                     'help' => 'PLUGIN_LOGIN.DYNAMIC_VISIBILITY_HELP',
+                                    'options' => [
+                                        1 => 'PLUGIN_ADMIN.ENABLED',
+                                        0 => 'PLUGIN_ADMIN.DISABLED'
+                                    ],
+                                    'validate' => [
+                                        'type' => 'bool'
+                                    ]
+                                ],
+                                'twofa_enabled' => [
+                                    'type' => 'toggle',
+                                    'label' => 'PLUGIN_LOGIN.2FA_ENABLED',
+                                    'highlight' => 0,
+                                    'default' => 0,
+                                    'help' => 'PLUGIN_LOGIN.2FA_ENABLED_HELP',
                                     'options' => [
                                         1 => 'PLUGIN_ADMIN.ENABLED',
                                         0 => 'PLUGIN_ADMIN.DISABLED'
@@ -420,7 +435,7 @@ return [
                                     'size' => 'x-small',
                                     'label' => 'PLUGIN_LOGIN.MAX_RESETS_INTERVAL',
                                     'help' => 'PLUGIN_LOGIN.MAX_RESETS_INTERVAL_HELP',
-                                    'append' => 'PLUGIN_LOGIN.SECONDS',
+                                    'append' => 'PLUGIN_LOGIN.MINUTES',
                                     'validate' => [
                                         'type' => 'number',
                                         'min' => 1
@@ -442,7 +457,18 @@ return [
                                     'size' => 'x-small',
                                     'label' => 'PLUGIN_LOGIN.MAX_LOGINS_INTERVAL',
                                     'help' => 'PLUGIN_LOGIN.MAX_LOGINS_INTERVAL_HELP',
-                                    'append' => 'PLUGIN_LOGIN.SECONDS',
+                                    'append' => 'PLUGIN_LOGIN.MINUTES',
+                                    'validate' => [
+                                        'type' => 'number',
+                                        'min' => 1
+                                    ]
+                                ],
+                                'ipv6_subnet_size' => [
+                                    'type' => 'number',
+                                    'size' => 'x-small',
+                                    'label' => 'PLUGIN_LOGIN.IPV6_SUBNET_SIZE',
+                                    'help' => 'PLUGIN_LOGIN.IPV6_SUBNET_SIZE_HELP',
+                                    'append' => 'PLUGIN_LOGIN.MINUTES',
                                     'validate' => [
                                         'type' => 'number',
                                         'min' => 1

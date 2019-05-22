@@ -1,0 +1,10 @@
+/*https://discourse.getgrav.org/t/conditional-field-creating-a-flexible-content-field-like-advanced-custom-fields-wordpress-plugin/7293/2 */
+/* Hide form-fieldset by default */
+ul.field-selection > li > .form-fieldset {
+    display: none;
+}
+
+/* Show form-fieldset that is selected */
+ul.field-selection > li > .form-fieldset.field-selection--show {
+    display: block;
+}

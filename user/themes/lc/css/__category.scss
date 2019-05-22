@@ -1,0 +1,179 @@
+.lc-section-category { 
+	.hero-bg {
+		position: relative;
+		background: url('https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.7);
+	}
+	
+	.about-words {
+		padding: 2em 0;
+		background: linear-gradient(-90deg,  #FFB209 20%,  #FFDA78 81%);
+		.subtitle {
+			color: #fff;
+		}
+		.text {
+			margin-left: 1.7em;
+			font-weight: 300;
+		}
+	}
+	
+	.feature-image {
+			box-shadow: 0 6px 10px 0 rgba(0,0,0, 0.28);
+			img {
+				z-index: -100;
+			}
+		}
+	.feature-abt {
+		background: #fff;
+		color: #1D1F24;
+		text-align: center;
+		border-top: 5px solid #FFC80A;
+	    width: 85%;
+	    margin: 0 auto;
+	    z-index: 10;
+	    margin-top: -15px;
+	    position: relative;
+	    padding: 10px 2em;
+		
+		.feature-name {
+			font-weight: 600;
+			color: #1D1F24;
+			text-transform: uppercase;
+		}
+		.feature-text {
+			font-weight: 300;
+			font-size: 13px;
+		}
+		.more {
+			color: #84A5BD;
+			font-weight: 600;
+			font-style: italic;
+		    font-size: 13px;
+		    padding-top: 5px;
+		}
+
+	}
+	.why-relevant {
+		p:not(.title__lower) {
+			margin-bottom: 1em;
+		}
+	}
+	/*ha*/
+		
+.testimonial-quote {
+    font-size: 16px;
+    margin-top: 2em;
+    margin-left: 20px;
+}
+
+.testimonial-quote blockquote {
+    /* Negate theme styles */
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.4 !important;
+    margin: 0;
+    position: relative;
+/*    text-shadow: 0 1px white;*/
+    z-index: 600;
+}
+
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+
+.testimonial-quote blockquote p:first-child:before {
+    content: '\201C';
+    color: #84A5BD;
+    font-size: 7.5em;
+    font-weight: $w-heavy;
+    opacity: 0.6;
+    position: absolute;
+    top: 31px;
+    left: -.2em;    
+    text-shadow: none;
+    z-index: -300;
+    font-family: Georgia, serif !important;
+}
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+.testimonial-quote blockquote p {
+    color: #333355;
+    line-height: 44px;
+    font-weight: $w-heavy;
+
+}
+
+.testimonial-quote cite {
+    color: #333355;
+    display: block;
+    font-size: .8em; 
+    margin-top: 12px;
+    span {
+		 color: #333355;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 1px white; 
+    }
+}
+  
+
+.testimonial-quote {
+    position: relative;
+}
+
+.testimonial-quote.right .quote-container {
+    padding-left: 0;
+    padding-right: 160px; 
+}
+
+.testimonial-quote.right img {
+    left: auto;
+    right: 0;
+}
+	/*ha*/
+
+	.side {
+		color: #fff;
+		margin-left: 9px;
+		font-weight: $w-thin;
+		font-style: oblique;
+	}
+	.recent-convos {
+		.outer {
+			justify-content: space-around;
+			margin: 3em 0 2.5em;
+		}
+		.title {
+			color: $secondary !important;
+			    font-size: 22px;
+		}
+	}
+	.recent-card {
+		width: 80%;
+	}
+	.whisker-button a {
+		background: #fff !important;
+	}
+	.subscribe {
+		background: linear-gradient(to right,rgba(76,86,93,0.75),rgba(76,86,93,93)), url("https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") !important;
+			background-size: cover; 
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+}
+

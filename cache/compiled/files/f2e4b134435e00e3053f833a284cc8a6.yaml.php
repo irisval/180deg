@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/system/blueprints/user/account.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452537,
     'data' => [
         'title' => 'Account',
         'form' => [
@@ -107,12 +107,13 @@ return [
                     ]
                 ],
                 'security' => [
+                    'security@' => 'admin.super',
                     'title' => 'PLUGIN_ADMIN.ACCESS_LEVELS',
                     'type' => 'section',
-                    'security' => 'admin.super',
                     'underline' => true,
                     'fields' => [
                         'groups' => [
+                            'security@' => 'admin.super',
                             'type' => 'select',
                             'multiple' => true,
                             'size' => 'large',
@@ -125,6 +126,7 @@ return [
                             ]
                         ],
                         'access' => [
+                            'security@' => 'admin.super',
                             'type' => 'permissions',
                             'label' => 'PLUGIN_ADMIN.PERMISSIONS',
                             'ignore_empty' => true,

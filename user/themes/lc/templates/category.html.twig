@@ -1,0 +1,305 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  
+<div class="lc-section-category">
+ <section class="hero hero-bg is-primary">
+    <div class="category-top">
+       <div class="is-inline-block">
+       <p class="title gradient-yellow">{{ header.taxonomy.category[0] }}:</p>
+    </div>
+       <div class="is-inline-block">
+       <p class="text">Lorem Khaled Ipsum is a major key to success. They don’t want us to eat.</p>
+    </div>
+    </div>
+ </section>
+ <section class="section">
+    <div class="container">
+
+
+
+       <div class="columns is-centered">
+          <div class="column is-one-half">
+             <figure class="feature-image image is-16by9">
+                <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+             </figure>
+             <div class="feature-abt">
+                <p class="feature-name">Mark Hamill</p>
+                <p class="feature-text">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae cons equatur, vel illum. Velit esse quam ni!</p>
+                <p class="more">Read More</p>
+             </div>
+          </div>
+          <div class="column is-one-half why-relevant">
+                <p class="title__lower gradient-yellow is-5">why is this relevant?</p>
+                <br>
+                <br>
+                     {{ header.relevantText|markdown}}
+
+          </div>
+       </div>
+       <div class="columns">
+          <div class="column is-6 is-offset-3">
+            
+          </div>
+       </div>
+     </div>
+       <!-- <div class="columns is-centered is-vcentered">
+          <div class="column is-half">
+             <blockquote>Obama says that culture is very important.</blockquote>
+          </div>
+       </div> -->
+
+    
+ </section>
+
+  <section class="hero about-words">
+       <div class="container">
+          <p class="subtitle is-4 gradient-blue is-inline-block">why {{ header.taxonomy.category[0] }}: is important:</p><span class="side is-inline-block">words from the team</span>
+ 
+       <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image shadow is-16by9">
+            <img src="{{ header.categoryImg|first.path }}">
+         </figure>
+        </div>
+        <div class="column is-two-thirds">
+          {% for q in header.quote %}
+                <div class="testimonial-quote group">
+                   <div class="quote-container">
+                      <blockquote>
+                         <p>{{ q.qquote }}</p>
+                      </blockquote>
+                      <cite><span>{{ q.qsource }}</span><br>{{ q.qcreds }}
+                      </cite>
+                   </div>
+                </div>
+          {% endfor %}
+
+        </div>
+       
+       </div>
+      
+             </div>
+    </section>
+    <section class="recent-convos">
+       <div class="container">
+          <div class="outer">
+          <h1 class="title has-text-centered gradient-yb">recent conversations in {{ header.taxonomy.category[0] }}:</h1>
+       </div>
+             <div class="columns">
+                <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+       <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+       <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+             </div>
+                                  <div class="columns">
+                <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+       <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+       <div class="column is-one-third">
+        <!-- start vid-->
+          <div class="recent-card card">
+             <div class="card-image has-shadow">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                   <a class="vid-button" href=""><i class="fas fa-play"></i></a>
+                </figure>
+                
+             </div>
+             <div class="card-content">
+              <div class="">
+                <p class="title-name has-text-left is-inline-block ">88. Gertrude Stein</p>
+                <span class="timestamp is-pulled-right is-inline-block">11:21</span>
+              </div>
+                <p class="title is-6">how to be a boss</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+             </div>
+          </div>
+        <!-- end vid -->
+       </div>
+             </div>
+<div class="button-center">
+  <div class="border whisker-button">
+    <a class=""><span>load more conversations</span></a>
+  </div>
+</div>
+       </div>
+    </section>
+    <section class="hero is-primary popular-posts">
+       <div class="container">
+          <div class="has-text-centered">
+       <p class="title gradient-yellow">Popular Posts</p>
+    </div>
+       
+          <div class="columns">
+                                  <div class="column is-one-third">
+        <!-- start featured -->
+          <div class="featured-card card">
+             <div class="card-image">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+                </figure>
+                <div class="tease__post-type">
+                   <a href="#">Culture</a>
+                </div>
+             </div>
+             <div class="card-content">
+                <p class="title is-5">84. John Smith</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+                <div class="card-tags">
+                   <a class="tag" href="#">#css</a>
+                   <a class="tag" href="#">#responsive</a>
+                   <a class="tag" href="#">#tech</a>
+                </div>
+             </div>
+          </div>
+          <!-- end featured -->
+       </div>
+                      <div class="column is-one-third">
+        <!-- start featured -->
+          <div class="featured-card card">
+             <div class="card-image">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+                </figure>
+                <div class="tease__post-type">
+                   <a href="#">Culture</a>
+                </div>
+             </div>
+             <div class="card-content">
+                <p class="title is-5">84. John Smith</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+                <div class="card-tags">
+                   <a class="tag" href="#">#css</a>
+                   <a class="tag" href="#">#responsive</a>
+                   <a class="tag" href="#">#tech</a>
+                </div>
+             </div>
+          </div>
+          <!-- end featured -->
+       </div>
+                      <div class="column is-one-third">
+        <!-- start featured -->
+          <div class="featured-card card">
+             <div class="card-image">
+                <figure class="image is-2by1">
+                   <img src="https://images.pexels.com/photos/375880/pexels-photo-375880.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Placeholder image">
+                </figure>
+                <div class="tease__post-type">
+                   <a href="#">Culture</a>
+                </div>
+             </div>
+             <div class="card-content">
+                <p class="title is-5">84. John Smith</p>
+                <p class="card-desc">Quis autem vel eum iure reprehendi qui in ea voluptate velit esse quam ni molestiae consequatur, vel illum quod maxime placeat.</p>
+                <div class="card-tags">
+                   <a class="tag" href="#">#css</a>
+                   <a class="tag" href="#">#responsive</a>
+                   <a class="tag" href="#">#tech</a>
+                </div>
+             </div>
+          </div>
+          <!-- end featured -->
+       </div>
+          </div>
+       </div>
+    </section>
+{% endblock %}

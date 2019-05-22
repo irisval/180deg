@@ -1,0 +1,200 @@
+.lc-section-home {
+	.subtitle {
+		text-transform: uppercase;
+		font-weight: $w-black !important;
+		letter-spacing: 5px;
+		margin: 0 auto;
+		margin-bottom: 2em;
+		text-align: center;
+		color: #333355;
+	}
+	.hero-bg {
+		position: relative;
+		background: url('https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.7);
+		.title {
+			white-space: pre-line;
+			line-height: 36px;
+		}
+		.text {
+			font-size: 18px;
+			max-width: 650px;
+			margin-bottom: 1.5em;
+		}
+		.about-button {
+  			border: 3px solid;
+		    border-image-source: linear-gradient(to right, #ffda78, #ffb209);
+		    border-image-slice: 1;
+		    padding: 5px 24px;
+		    background: linear-gradient(to right, #FFDA78, #FFB209);
+		    -webkit-background-clip: text;
+		    -webkit-text-fill-color: transparent;
+		    letter-spacing: 1.5px;
+		    font-weight: $w-heavy;
+		    text-transform: lowercase;
+		    margin-right: 12px;
+
+		}
+	}
+	.home-featured-players {
+		background-color: #F6F6F6;
+		opacity: 0.99;
+		.sizer {
+			width: 80%;
+			margin: 0 auto;
+		}
+		.btns {
+			 margin: 0 auto;
+			        text-align: center;
+			margin-top: 2em;
+		}
+		.button {
+			border-radius: 1.5px !important;
+			margin-right: 4em;
+		}
+		.text {
+			text-align: center;
+		    line-height: 30px;
+		    font-size: 18px;
+		    width: 750px;
+		    margin: 0 auto;
+		    padding-top: 10px;
+			a {
+				text-decoration: none;
+    			border-bottom: 1.5px solid #84A5BD !important;
+			}
+		}
+		span {
+				
+				    text-transform: uppercase;
+			    letter-spacing: 1px;
+			    font-weight: $w-heavy;
+			        font-size: 13px;
+
+			}
+	}
+	.home-impact {
+		background-color: $primary;
+		.subtitle {
+			color: #fff;
+		}
+		.map__sec {
+		  display: flex;
+			.side {
+			  	width: 50%;
+			  	background-color: white;
+			  	vertical-align: middle;
+			    flex: 1;
+			    display: flex;
+			    align-items: center;
+			  	.mapouter {
+				  	text-align: right;
+				  	height:420px; 
+				  	width:100%;
+					.gmap_canvas { 
+						overflow: hidden;
+						background: none!important;
+						height:420px;
+						width: 100%;
+						iframe {
+							height: inherit;
+						}
+					}
+				}
+				.main {
+				    color: #4D4444 !important;
+				    font-size: 34px;
+				    font-weight: $w-heavy;
+				    letter-spacing: 1px;
+				    line-height: 1.5em;
+				    text-align: center;
+				    margin: 0 18px;
+				}
+				.above {
+				    color: #4D4444;
+				    font-size: 11px;
+				    text-transform: uppercase;
+				    letter-spacing: 2px;
+				    text-align: center;
+				    font-weight: $w-heavy;
+				}
+				.cite {
+					color: #84A5BD;
+				    font-size: 18px;
+				    text-align: center;
+				    text-transform: uppercase;
+				    font-style: oblique;
+				    font-weight: $w-black;
+				    letter-spacing: 2px;
+				    margin-top: 15px;
+				}
+			}
+		}
+		.text {
+			font-size: 18px;
+		    margin: 0 auto;
+		    max-width: 650px;
+		    text-align: center;
+		    padding-top: 25px;
+		}
+	}
+	.home-stats {
+		color: #424753;
+		.subtitle {
+			color: #333355;
+		}
+		i {
+			color: $primary;
+		    font-size: 3.5em;
+		    border: 1.5px solid #84A5BD;
+		    border-radius: 50%;
+		    padding: 27px;
+		    margin-bottom: 17px;
+		}
+		.level {
+			width: 80%;
+    		margin: 0 auto;
+		}
+		.level-item {
+			border-left: 1px solid #979797;
+			&:first-of-type {
+				border-left: none !important;
+			}
+			.num {
+				font-weight: 800;
+	    		font-size: 24px;
+			}
+			.heading {
+				font-size: 11px;
+			}
+		}
+		
+		.text {
+			font-size: 18px;
+		    margin: 0 auto;
+		    max-width: 650px;
+		    text-align: center;
+		    padding-top: 30px;
+		}
+	}
+	.home-recent {
+	    padding-top: 2.5em;
+	    padding-bottom: 2.7em;
+	    position: relative;
+	    background: url(https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    box-shadow: inset 0 0 0 2000px rgba(85, 121, 145, 0.85) !important;
+	}
+	.home-subscribe-text {
+		background-color: #F6F6F6;
+		.text {
+			text-align: center;
+    		letter-spacing: 1px;
+		}
+	}
+}

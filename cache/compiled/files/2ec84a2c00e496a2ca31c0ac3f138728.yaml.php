@@ -2,10 +2,11 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/email/blueprints.yaml',
-    'modified' => 1549559364,
+    'modified' => 1558452585,
     'data' => [
         'name' => 'Email',
-        'version' => '2.7.2',
+        'version' => '3.0.2',
+        'testing' => false,
         'description' => 'Enables the emailing system for Grav',
         'icon' => 'envelope',
         'author' => [
@@ -20,7 +21,11 @@ return [
         'dependencies' => [
             0 => [
                 'name' => 'grav',
-                'version' => '>=1.1.9'
+                'version' => '>=1.6.0'
+            ],
+            1 => [
+                'name' => 'form',
+                'version' => '>=3.0.3'
             ]
         ],
         'form' => [
@@ -44,7 +49,7 @@ return [
                     'label' => 'PLUGIN_EMAIL.MAIL_ENGINE',
                     'size' => 'medium',
                     'options' => [
-                        'none' => 'Disabled',
+                        'none' => 'PLUGIN_ADMIN.DISABLED',
                         'smtp' => 'SMTP',
                         'sendmail' => 'Sendmail'
                     ]
@@ -55,7 +60,7 @@ return [
                     'size' => 'medium',
                     'default' => 'text/html',
                     'options' => [
-                        'text/plain' => 'Plain text',
+                        'text/plain' => 'PLUGIN_EMAIL.CONTENT_TYPE_PLAIN_TEXT',
                         'text/html' => 'HTML'
                     ]
                 ],
@@ -63,7 +68,12 @@ return [
                     'type' => 'text',
                     'size' => 'medium',
                     'label' => 'PLUGIN_EMAIL.CHARSET',
-                    'placeholder' => 'Defaults to UTF-8'
+                    'placeholder' => 'PLUGIN_EMAIL.CHARSET_PLACEHOLDER'
+                ],
+                'email_Defaults' => [
+                    'type' => 'section',
+                    'title' => 'PLUGIN_EMAIL.EMAIL_DEFAULTS',
+                    'underline' => true
                 ],
                 'from' => [
                     'type' => 'email',
@@ -146,6 +156,11 @@ return [
                     'label' => 'PLUGIN_EMAIL.EMAIL_BODY',
                     'placeholder' => 'PLUGIN_EMAIL.EMAIL_BODY_PLACEHOLDER'
                 ],
+                'smtp_config' => [
+                    'type' => 'section',
+                    'title' => 'PLUGIN_EMAIL.SMTP_CONFIGURATION',
+                    'underline' => true
+                ],
                 'mailer.smtp.server' => [
                     'type' => 'text',
                     'size' => 'medium',
@@ -168,7 +183,7 @@ return [
                     'size' => 'medium',
                     'label' => 'PLUGIN_EMAIL.SMTP_ENCRYPTION',
                     'options' => [
-                        'none' => 'None',
+                        'none' => 'PLUGIN_EMAIL.SMTP_ENCRYPTION_NONE',
                         'ssl' => 'SSL',
                         'tls' => 'TLS'
                     ]
@@ -176,18 +191,70 @@ return [
                 'mailer.smtp.user' => [
                     'type' => 'text',
                     'size' => 'medium',
+                    'autocomplete' => 'nope',
                     'label' => 'PLUGIN_EMAIL.SMTP_LOGIN_NAME'
                 ],
                 'mailer.smtp.password' => [
                     'type' => 'password',
                     'size' => 'medium',
+                    'autocomplete' => 'nope',
                     'label' => 'PLUGIN_EMAIL.SMTP_PASSWORD'
+                ],
+                'sendmail_config' => [
+                    'type' => 'section',
+                    'title' => 'PLUGIN_EMAIL.SENDMAIL_CONFIGURATION',
+                    'underline' => true
                 ],
                 'mailer.sendmail.bin' => [
                     'type' => 'text',
                     'size' => 'medium',
                     'label' => 'PLUGIN_EMAIL.PATH_TO_SENDMAIL',
                     'placeholder' => '/usr/sbin/sendmail'
+                ],
+                'queue_section' => [
+                    'type' => 'section',
+                    'title' => 'PLUGIN_EMAIL.QUEUE_TITLE',
+                    'text' => 'PLUGIN_EMAIL.QUEUE_DESC',
+                    'markdown' => true,
+                    'underline' => true
+                ],
+                'queue.enabled' => [
+                    'type' => 'toggle',
+                    'label' => 'PLUGIN_EMAIL.QUEUE_ENABLED',
+                    'highlight' => 0,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'queue.flush_frequency' => [
+                    'type' => 'cron',
+                    'label' => 'PLUGIN_EMAIL.QUEUE_FLUSH_FREQUENCY',
+                    'size' => 'medium',
+                    'help' => 'PLUGIN_EMAIL.QUEUE_FLUSH_FREQUENCY_HELP',
+                    'default' => '* * * * *',
+                    'placeholder' => '* * * * *'
+                ],
+                'queue.flush_msg_limit' => [
+                    'type' => 'number',
+                    'label' => 'PLUGIN_EMAIL.QUEUE_FLUSH_MSG_LIMIT',
+                    'size' => 'x-small',
+                    'append' => 'PLUGIN_EMAIL.QUEUE_FLUSH_MSG_LIMIT_APPEND'
+                ],
+                'queue.flush_time_limit' => [
+                    'type' => 'number',
+                    'label' => 'PLUGIN_EMAIL.QUEUE_FLUSH_TIME_LIMIT',
+                    'size' => 'x-small',
+                    'append' => 'PLUGIN_EMAIL.QUEUE_FLUSH_TIME_LIMIT_APPEND'
+                ],
+                'advanced_section' => [
+                    'type' => 'section',
+                    'title' => 'PLUGIN_EMAIL.ADVANCED',
+                    'underline' => true
                 ],
                 'debug' => [
                     'type' => 'toggle',
