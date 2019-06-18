@@ -17,7 +17,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
          <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="/lc">
           <img id="logo" src="{{ url('theme://images/logo.png') }}">
         </a>
 
@@ -30,19 +30,19 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">About</a>
-          <a class="navbar-item">Conversations</a>
+          <a href="/lc/about" class="navbar-item">About</a>
+          <a href="/lc/conversations" class="navbar-item">Conversations</a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Categories</a>
+            <a href="/lc/category/technology" class="navbar-link">Categories</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">Tech</a>
-              <a class="navbar-item">Gender</a>
-              <a class="navbar-item">Race</a>
+               <a class="navbar-item">Tech</a>
+               <a class="navbar-item">Gender</a>
+               <a class="navbar-item">Race</a>
           
             </div>
           </div>
-            <a class="navbar-item">Contact</a>
-            <a class="navbar-item">Get Involved</a>
+            <a href="/lc/contact" class="navbar-item">Contact</a>
+            <a href="/lc/involved" class="navbar-item">Get Involved</a>
         </div>
 
         <div class="navbar-end">

@@ -2,9 +2,16 @@
 .navbar {
 	justify-content: space-between;
 	flex-wrap: wrap;
-	z-index: -100;
+	/*z-index: -100;*/
+	z-index: 0;
+}
+a {
+	color: $primary;
 }
 
+.navbar-link:not(.is-arrowless)::after {
+    border-color: $primary !important;
+}
 #lc-section-nav {
 	width: 100%;
 	font-weight: $weight-normal;

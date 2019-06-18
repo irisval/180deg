@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1558474881,
-    'checksum' => '3df02178495e64726575b04ee4aaaf0d',
+    'timestamp' => 1558576067,
+    'checksum' => 'ad8b6d875900dd15abb70267ff6b22a8',
     'files' => [
         'user/config' => [
             'backups' => [
@@ -35,7 +35,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1558474879
+                'modified' => 1558576067
             ],
             'themes/quark' => [
                 'file' => 'user/config/themes/quark.yaml',
@@ -103,7 +103,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1558452585
+                'modified' => 1558574977
             ]
         ]
     ],
@@ -300,13 +300,13 @@ return [
                     'flush_time_limit' => 100
                 ],
                 'mailer' => [
-                    'engine' => 'sendmail',
+                    'engine' => 'smtp',
                     'smtp' => [
-                        'server' => 'localhost',
-                        'port' => 25,
+                        'server' => 'smtp.mailtrap.io',
+                        'port' => 2525,
                         'encryption' => 'none',
-                        'user' => '',
-                        'password' => ''
+                        'user' => 'irisk417',
+                        'password' => 'Mailtrap'
                     ],
                     'sendmail' => [
                         'bin' => '/usr/sbin/sendmail -bs'

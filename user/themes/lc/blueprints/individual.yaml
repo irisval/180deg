@@ -2,8 +2,6 @@ title: Gallery
 '@extends':
     type: default
     context: blueprints://pages
-
-
 form:
   fields:
     tabs:
@@ -34,6 +32,13 @@ form:
               default: https://youtube.com
               validate:
                 required: true
+            header.videoThumbnail:
+              type: file 
+              label: Video Thumbnail
+              destination: 'self@'
+              multiple: false
+              accept:
+                - image/*
             header.personBio:
               type: text
               label: Person Bio
@@ -47,14 +52,38 @@ form:
                 multiple: false
                 accept:
                   - image/*
-                validate:
-                required: true
-            header.taxonomy:
-              type: taxonomy
-              label: PLUGIN_ADMIN.TAXONOMY
-              multiple: true
+            # SELECT THROUGH OPTIONS INSTEAD
+            header.taxonomy.setFeatured:
+              type: toggle
+              label: Set Featured Impact Player
+              highlight: 1
+              default: 0
+              options:
+                  1: 'Yes'
+                  0: 'No'
               validate:
-                type: array
+                  type: bool
+
+            # header.taxonomy.category:
+            #   type: selectize
+            #   label: Category
+            #   classes: fancy
+            #   multiple: false
+            #   validate:
+            #     required: true
+            # header.taxonomy.tags:
+            #   type: selectize
+            #   label: Tags
+            #   classes: fancy
+            #   multiple: true
+            #   validate:
+            #     type: array
+            # header.taxonomy:
+            #   type: taxonomy
+            #   label: PLUGIN_ADMIN.TAXONOMY
+            #   multiple: true
+            #   validate:
+            #     type: array
         content:
             fields:
               content:

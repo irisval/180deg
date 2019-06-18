@@ -6779,7 +6779,14 @@ label.panel-block {
 .navbar {
   justify-content: space-between;
   flex-wrap: wrap;
-  z-index: -100; }
+  /*z-index: -100;*/
+  z-index: 0; }
+
+a {
+  color: #FFC80A; }
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: #FFC80A !important; }
 
 #lc-section-nav {
   width: 100%;
@@ -7383,6 +7390,18 @@ label.panel-block {
   background-color: #f8f8f8 !important;
   opacity: 0.99;
   margin-bottom: 0.7em; }
+  .lc-section-convo .vid-full .carousel-video-container .yt-video {
+    position: relative;
+    padding-bottom: 47.5%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden; }
+    .lc-section-convo .vid-full .carousel-video-container .yt-video iframe, .lc-section-convo .vid-full .carousel-video-container .yt-video object, .lc-section-convo .vid-full .carousel-video-container .yt-video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
   .lc-section-convo .vid-full .carousel-video-container figure {
     background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.15) 0%, #000000 124%); }
     .lc-section-convo .vid-full .carousel-video-container figure img {
@@ -7525,23 +7544,23 @@ label.panel-block {
         letter-spacing: 1px;
         font-weight: 600;
         font-size: 10px; }
+    .lc-section-indiv .indiv-video .video-player-container .yt-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      .lc-section-indiv .indiv-video .video-player-container .yt-video iframe, .lc-section-indiv .indiv-video .video-player-container .yt-video object, .lc-section-indiv .indiv-video .video-player-container .yt-video embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
     .lc-section-indiv .indiv-video .video-player-container figure {
       background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.15) 0%, #000000 124%);
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); }
       .lc-section-indiv .indiv-video .video-player-container figure img {
         z-index: -1000 !important; }
-      .lc-section-indiv .indiv-video .video-player-container figure.yt-video {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px;
-        height: 0;
-        overflow: hidden; }
-        .lc-section-indiv .indiv-video .video-player-container figure.yt-video iframe, .lc-section-indiv .indiv-video .video-player-container figure.yt-video object, .lc-section-indiv .indiv-video .video-player-container figure.yt-video embed {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%; }
       .lc-section-indiv .indiv-video .video-player-container figure .vid-button {
         position: absolute;
         left: 47.5%;
@@ -8247,9 +8266,6 @@ iframe body {
   .tags-section .tag {
     background-color: #f5f5f5 !important;
     color: #333355 !important; }
-
-.active .publisher-nav-color::after {
-  color: #FFC80A !important; }
 
 /*https://engageinteractive.co.uk/blog/top-10-scss-mixins*/
 /*$family-primary: 'Lato', sans-serif;

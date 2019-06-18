@@ -9,13 +9,13 @@ queue:
   flush_msg_limit: 10
   flush_time_limit: 100
 mailer:
-  engine: sendmail
+  engine: smtp
   smtp:
-    server: localhost
-    port: 25
+    server: smtp.mailtrap.io
+    port: 2525
     encryption: none
-    user: ''
-    password: ''
+    user: 'irisk417'
+    password: 'Mailtrap'
   sendmail:
     bin: '/usr/sbin/sendmail -bs'
 content_type: text/html

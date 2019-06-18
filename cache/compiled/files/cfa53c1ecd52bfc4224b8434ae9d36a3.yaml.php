@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Applications/MAMP/htdocs/lc/user/plugins/email/email.yaml',
-    'modified' => 1558452585,
+    'modified' => 1558574977,
     'data' => [
         'enabled' => true,
         'from' => NULL,
@@ -16,13 +16,13 @@ return [
             'flush_time_limit' => 100
         ],
         'mailer' => [
-            'engine' => 'sendmail',
+            'engine' => 'smtp',
             'smtp' => [
-                'server' => 'localhost',
-                'port' => 25,
+                'server' => 'smtp.mailtrap.io',
+                'port' => 2525,
                 'encryption' => 'none',
-                'user' => '',
-                'password' => ''
+                'user' => 'irisk417',
+                'password' => 'Mailtrap'
             ],
             'sendmail' => [
                 'bin' => '/usr/sbin/sendmail -bs'

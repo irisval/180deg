@@ -4,6 +4,20 @@
 		opacity: 0.99;
 		margin-bottom: 0.7em;
 		.carousel-video-container {
+			.yt-video {
+				position: relative;
+				padding-bottom: 47.5%;
+				padding-top: 30px;
+				height: 0;
+				overflow: hidden;
+				iframe, object, embed {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
 			figure {
 				background-image: linear-gradient(-180deg, rgba(255,255,255,0.15) 0%, #000000 124%);
 				img {

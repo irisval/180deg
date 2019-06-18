@@ -19,15 +19,15 @@
                         <iframe width="100%" height="auto" src="{{ header.videoURL }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                      </figure>
                      <figure id="video-overlay" class="image is-5by3 video-shadow">
-                        <img src="https://images.unsplash.com/photo-1505682614136-0a12f9f7beea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80">
+                        <img src="{{ base_url_relative }}/{{ header.videoThumbnail|first.path }}">
                         <a class="vid-button"><i class="fas fa-sm fa-play"></i></a>
                         <div class="vid-text">
                            <span class="vid-latest-text">conversation</span>
                            <span class="vid-ts">11:21</span>
                         </div>
                         <div class="vid-text">
-                           <span class="vid-title">89. Darrell Scott:</span>
-                           <span class="vid-tagline">Get You a Good Squad</span> 
+                           <span class="vid-title">89. {{ header.person }}</span>
+                           <span class="vid-tagline">{{ header.tagline }}</span> 
                         </div>
                      </figure>
                   </div>
@@ -53,6 +53,20 @@
                <div class="column is-3">
                   <div class="watch-next-container">
                      <span class="next">watch next</span>
+                     {% for post in taxonomy.findTaxonomy({'category':[header.taxonomy.category[0]]}) %}
+                        <article class="media">
+                        <figure class="media-left">
+                           <img class="image video-shadow" src="{{ base_url_relative }}/{{ post.header.videoThumbnail|first.path }}">
+                        </figure>
+                        <div class="media-content">
+                           <div class="field">
+                              <p class="category">{{header.taxonomy.category[0]}}</p>
+                              <p class="vid-title">{{post.header.tagline}}</p>
+                           </div>
+                        </div>
+                     </article>
+                        
+                     {% endfor %}
                      <article class="media">
                         <figure class="media-left">
                            <img class="image video-shadow" src="https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80">
@@ -136,16 +150,19 @@
                      <span class="is-inline-block">Interview By John Purcell</span>
                   </div>
                   <div class="indiv-content-body">
-                        {{ page.content }}
+                       <!-- <h1> {{ page.content }}</h1>
+                       <h1>ddddd</h1> -->
+
+      
                         {% for p in page.header.list %}
                         {% set item = p.fieldselection %}
                         {% if item.selection == 'paragraph' %}
                              <p class="text">{{ item.paragraph }}</p>
                         {% elseif item.selection == 'img-single' %}
-                              {{ item.img-single[0] }}
                             <div class="image-solo-container">
                               <figure class="image landscape is-5by3 img-shadow">
-                                 <img src="{{ page.media[item.img-single|first.path] }}">
+                                 <img src="{{ base_url_relative }}/{{ page.media[item.img-single|first.name] }}">
+                                 
                               </figure>
                               <p class="caption">this is the caption of the image</p>
                            </div>
@@ -220,7 +237,7 @@
                         <div class="columns is-vcentered">
                            <div class="column is-one-quarter">
                               <figure class="image landscape is-1by1 img-shadow">
-                                 <img src="{{ header.personHeadshot|first.path }}">
+                                 <img src="{{ base_url_relative }}/{{ header.personHeadshot|first.path }}">
                               </figure>
                            </div>
                            <div class="column is-three-quarters">
