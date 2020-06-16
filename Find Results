@@ -1,0 +1,118 @@
+Searching 4288 files for "whisker"
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/css/__category.scss:
+  166  		width: 80%;
+  167  	}
+  168: 	.transp-button a {
+  169  		background: #fff !important;
+  170  	}
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/css/__generic.scss:
+  182  	box-shadow: 0 6px 10px 0 rgba(0,0,0, 0.28);
+  183  }
+  184: 	.transp-button {
+  185  		font-size: 1rem;
+  186  		font-weight: 600;
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/css/__involved.scss:
+   28  		justify-content: center;
+   29  	}
+   30: 	.transp-button {
+   31  		font-size: 1rem;
+   32  		font-weight: 600;
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/css/style.css:
+ 9502    justify-content: center;
+ 9503  }
+ 9504: .lc-section-involved .transp-button {
+ 9505    font-size: 1rem;
+ 9506    font-weight: 600;
+ ....
+ 9517    transition: 0.4s;
+ 9518  }
+ 9519: .lc-section-involved .transp-button::before {
+ 9520    content: "";
+ 9521    position: absolute;
+ ....
+ 9527    transition: 0.4s;
+ 9528  }
+ 9529: .lc-section-involved .transp-button::after {
+ 9530    content: "";
+ 9531    position: absolute;
+ ....
+ 9537    transition: 0.4s;
+ 9538  }
+ 9539: .lc-section-involved .transp-button a {
+ 9540    letter-spacing: 1.5px;
+ 9541    background: #fff;
+ ....
+ 9543    padding: 9px 40px;
+ 9544  }
+ 9545: .lc-section-involved .transp-button a span {
+ 9546    background-image: linear-gradient(to right, #FFB209 20%, #FEDC42 81%);
+ 9547    color: transparent;
+ ....
+ 9875    width: 80%;
+ 9876  }
+ 9877: .lc-section-category .transp-button a {
+ 9878    background: #fff !important;
+ 9879  }
+ ....
+ 10829  }
+ 10830  
+ 10831: .transp-button {
+ 10832    font-size: 1rem;
+ 10833    font-weight: 600;
+ .....
+ 10844    transition: 0.4s;
+ 10845  }
+ 10846: .transp-button a {
+ 10847    letter-spacing: 1.5px;
+ 10848    background: rgba(85, 121, 145, 0.9);
+ .....
+ 10850    padding: 9px 40px;
+ 10851  }
+ 10852: .transp-button a span {
+ 10853    background-image: linear-gradient(to right, #FFB209 20%, #FEDC42 81%);
+ 10854    color: transparent;
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/templates/contact.html.twig:
+   54          
+   55          <div class="button-center">
+   56:           <div class="border transp-button">
+   57              <a class=""><span>submit</span></a>
+   58            </div>
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/templates/home.html.twig:
+   17  
+   18                    <!-- <div class="button-center is-inline-block">
+   19:                     <div class="border transp-button">
+   20                        <a class=""><span>load more conversations</span></a>
+   21                      </div>
+   22                    </div>
+   23                    <div class="button-center is-inline-block">
+   24:                     <div class="border transp-button">
+   25                        <a class=""><span>load more conversations</span></a>
+   26                      </div>
+   ..
+  278                 </div>
+  279                 <div class="button-center">
+  280:                     <div class="border transp-button">
+  281                        <a class=""><span>see all</span></a>
+  282                      </div>
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/templates/involved.html.twig:
+   46                    </div>
+   47                    <div class="button-center">
+   48:                      <div class="border transp-button">
+   49                          <a class=""><span>submit</span></a>
+   50                       </div>
+
+/Users/irisv/Desktop/code/180deg/user/themes/lc/templates/single-category.html.twig:
+  268               </div>
+  269  <div class="button-center">
+  270:   <div class="border transp-button">
+  271      <a class=""><span>load more conversations</span></a>
+  272    </div>
+
+18 matches across 8 files

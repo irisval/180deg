@@ -170,8 +170,7 @@ class ImageMedium extends Medium
     {
         /** @var UniformResourceLocator $locator */
         $locator = Grav::instance()['locator'];
-        $image_path = $locator->findResource('cache://images', true);
-        $image_dir = $locator->findResource('cache://images', false);
+        $image_path = $locator->findResource('cache://images', true) ?: $locator->findResource('cache://images', true, true);
         $saved_image_path = $this->saveImage();
 
         $output = preg_replace('|^' . preg_quote(GRAV_ROOT, '|') . '|', '', $saved_image_path);
@@ -181,6 +180,7 @@ class ImageMedium extends Medium
         }
 
         if (Utils::startsWith($output, $image_path)) {
+            $image_dir = $locator->findResource('cache://images', false);
             $output = '/' . $image_dir . preg_replace('|^' . preg_quote($image_path, '|') . '|', '', $output);
         }
 
@@ -232,7 +232,7 @@ class ImageMedium extends Medium
     }
 
     /**
-     * Allows the ability to override the Inmage's Pretty name stored in cache
+     * Allows the ability to override the image's pretty name stored in cache
      *
      * @param string $name
      */
@@ -517,6 +517,15 @@ class ImageMedium extends Medium
     }
 
     /**
+     * Handle this commonly used variant
+     */
+    public function cropZoom()
+    {
+        $this->__call('zoomCrop', func_get_args());
+        return $this;
+    }
+
+    /**
      * Forward the call to the image processing method.
      *
      * @param string $method
@@ -525,10 +534,6 @@ class ImageMedium extends Medium
      */
     public function __call($method, $args)
     {
-        if ($method === 'cropZoom') {
-            $method = 'zoomCrop';
-        }
-
         if (!\in_array($method, self::$magic_actions, true)) {
             return parent::__call($method, $args);
         }

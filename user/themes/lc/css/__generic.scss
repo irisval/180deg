@@ -181,7 +181,7 @@ iframe body {
 .shadow {
 	box-shadow: 0 6px 10px 0 rgba(0,0,0, 0.28);
 }
-	.whisker-button {
+	.transp-button {
 		font-size: 1rem;
 		font-weight: 600;
 		/* line-height: 2.2rem;*/
@@ -195,26 +195,6 @@ iframe body {
 		/*    margin: 4px 24px;*/
 		position: relative;
 		transition: 0.4s;
-		&::before {
-			content: '';
-			position: absolute;
-			width: 40px;
-			height: 3px;
-			background: #FFB209;
-			top: calc(50% - 1.5px);
-			right: 100%;
-			transition: 0.4s;
-		}
-		&::after {
-			content: '';
-			position: absolute;
-			width: 40px;
-			height: 3px;
-			background: #FEDC42;
-			top: calc(50% - 1.5px);
-			left: 100%;
-			transition: 0.4s;
-		}
 		a {
 			letter-spacing: 1.5px;
 			background: rgba(85, 121, 145, 0.9);

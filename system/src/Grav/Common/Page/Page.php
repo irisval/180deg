@@ -19,6 +19,7 @@ use Grav\Common\Markdown\Parsedown;
 use Grav\Common\Markdown\ParsedownExtra;
 use Grav\Common\Page\Interfaces\PageInterface;
 use Grav\Common\Media\Traits\MediaTrait;
+use Grav\Common\Page\Markdown\Excerpts;
 use Grav\Common\Taxonomy;
 use Grav\Common\Uri;
 use Grav\Common\Utils;
@@ -27,7 +28,6 @@ use Negotiation\Accept;
 use Negotiation\Negotiator;
 use RocketTheme\Toolbox\Event\Event;
 use RocketTheme\Toolbox\File\MarkdownFile;
-use Symfony\Component\Yaml\Exception\ParseException;
 
 define('PAGE_ORDER_PREFIX_REGEX', '/^[0-9]+\./u');
 
@@ -529,9 +529,9 @@ class Page implements PageInterface
             $headers['Last-Modified'] = $last_modified_date;
         }
 
-        // Calculate ETag based on the raw file
+        // Ask Grav to calculate ETag from the final content.
         if ($this->eTag()) {
-            $headers['ETag'] = '"' . md5($this->raw() . $this->modified()).'"';
+            $headers['ETag'] = '1';
         }
 
         // Set Vary: Accept-Encoding header
@@ -608,12 +608,12 @@ class Page implements PageInterface
                 return $content;
             }
 
-            return mb_strimwidth($content, 0, $size, '...', 'utf-8');
+            return mb_strimwidth($content, 0, $size, '...', 'UTF-8');
         }
 
         $summary = Utils::truncateHtml($content, $size);
 
-        return html_entity_decode($summary);
+        return html_entity_decode($summary, ENT_COMPAT | ENT_HTML401, 'UTF-8');
     }
 
     /**
@@ -659,7 +659,7 @@ class Page implements PageInterface
             // Load cached content
             /** @var Cache $cache */
             $cache = Grav::instance()['cache'];
-            $cache_id = md5('page' . $this->id());
+            $cache_id = md5('page' . $this->getCacheKey());
             $content_obj = $cache->fetch($cache_id);
 
             if (is_array($content_obj)) {
@@ -819,23 +819,31 @@ class Page implements PageInterface
         /** @var Config $config */
         $config = Grav::instance()['config'];
 
-        $defaults = (array)$config->get('system.pages.markdown');
+        $markdownDefaults = (array)$config->get('system.pages.markdown');
         if (isset($this->header()->markdown)) {
-            $defaults = array_merge($defaults, $this->header()->markdown);
+            $markdownDefaults = array_merge($markdownDefaults, $this->header()->markdown);
         }
 
         // pages.markdown_extra is deprecated, but still check it...
-        if (!isset($defaults['extra']) && (isset($this->markdown_extra) || $config->get('system.pages.markdown_extra') !== null)) {
+        if (!isset($markdownDefaults['extra']) && (isset($this->markdown_extra) || $config->get('system.pages.markdown_extra') !== null)) {
             user_error('Configuration option \'system.pages.markdown_extra\' is deprecated since Grav 1.5, use \'system.pages.markdown.extra\' instead', E_USER_DEPRECATED);
 
-            $defaults['extra'] = $this->markdown_extra ?: $config->get('system.pages.markdown_extra');
+            $markdownDefaults['extra'] = $this->markdown_extra ?: $config->get('system.pages.markdown_extra');
         }
 
+        $extra = $markdownDefaults['extra'] ?? false;
+        $defaults = [
+            'markdown' => $markdownDefaults,
+            'images' => $config->get('system.images', [])
+        ];
+
+        $excerpts = new Excerpts($this, $defaults);
+
         // Initialize the preferred variant of Parsedown
-        if ($defaults['extra']) {
-            $parsedown = new ParsedownExtra($this, $defaults);
+        if ($extra) {
+            $parsedown = new ParsedownExtra($excerpts);
         } else {
-            $parsedown = new Parsedown($this, $defaults);
+            $parsedown = new Parsedown($excerpts);
         }
 
         $this->content = $parsedown->text($this->content);
@@ -857,7 +865,7 @@ class Page implements PageInterface
     public function cachePageContent()
     {
         $cache = Grav::instance()['cache'];
-        $cache_id = md5('page' . $this->id());
+        $cache_id = md5('page' . $this->getCacheKey());
         $cache->save($cache_id, ['content' => $this->content, 'content_meta' => $this->content_meta]);
     }
 
@@ -1192,7 +1200,7 @@ class Page implements PageInterface
     /**
      * @return string
      */
-    protected function getCacheKey()
+    public function getCacheKey(): string
     {
         return $this->id();
     }
@@ -1397,12 +1405,12 @@ class Page implements PageInterface
             return $this->template_format;
         }
 
-        // Use content negotitation via the `accept:` header
-        $http_accept = $_SERVER['HTTP_ACCEPT'] ?? false;
+        // Use content negotiation via the `accept:` header
+        $http_accept = $_SERVER['HTTP_ACCEPT'] ?? null;
         if (is_string($http_accept)) {
             $negotiator = new Negotiator();
 
-            $supported_types = Grav::instance()['config']->get('system.pages.types', ['html', 'json']);
+            $supported_types = Utils::getSupportPageTypes(['html', 'json']);
             $priorities = Utils::getMimeTypes($supported_types);
 
             $media_type = $negotiator->getBest($http_accept, $priorities);
@@ -1686,9 +1694,9 @@ class Page implements PageInterface
             $metadata['generator'] = 'GravCMS';
 
             // Get initial metadata for the page
-            $metadata = array_merge($metadata, Grav::instance()['config']->get('site.metadata'));
+            $metadata = array_merge($metadata, Grav::instance()['config']->get('site.metadata', []));
 
-            if (isset($this->header->metadata)) {
+            if (isset($this->header->metadata) && is_array($this->header->metadata)) {
                 // Merge any site.metadata settings in with page metadata
                 $metadata = array_merge($metadata, $this->header->metadata);
             }
@@ -2001,6 +2009,10 @@ class Page implements PageInterface
      */
     public function id($var = null)
     {
+        if (null === $this->id) {
+            // We need to set unique id to avoid potential cache conflicts between pages.
+            $var = time() . md5($this->filePath());
+        }
         if ($var !== null) {
             // store unique per language
             $active_lang = Grav::instance()['language']->getLanguage() ?: '';
@@ -2816,7 +2828,7 @@ class Page implements PageInterface
         if ($pagination) {
             $params = $collection->params();
 
-            $limit = $params['limit'] ?? 0;
+            $limit = (int)($params['limit'] ?? 0);
             $start = !empty($params['pagination']) ? ($uri->currentPage() - 1) * $limit : 0;
 
             if ($limit && $collection->count() > $limit) {
@@ -2847,9 +2859,9 @@ class Page implements PageInterface
             $result = [];
             foreach ((array)$value as $key => $val) {
                 if (is_int($key)) {
-                    $result = $result + $this->evaluate($val)->toArray();
+                    $result = $result + $this->evaluate($val, $only_published)->toArray();
                 } else {
-                    $result = $result + $this->evaluate([$key => $val])->toArray();
+                    $result = $result + $this->evaluate([$key => $val], $only_published)->toArray();
                 }
 
             }
@@ -2930,7 +2942,7 @@ class Page implements PageInterface
                         case 'page':
                         case 'self':
                             $results = new Collection();
-                            $results = $results->addPage($page)->nonModular();
+                            $results = $results->addPage($page);
                             break;
 
                         case 'descendants':
